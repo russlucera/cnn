@@ -61,16 +61,12 @@ train_datagen = ImageDataGenerator(rescale=1. / 255,
 
 test_datagen = ImageDataGenerator(rescale=1. / 255)
 
-training_set = train_datagen.flow_from_directory('/Users/rustambekrukhilloev/Desktop/Deep_Learning_A_Z/Volume 1 - '
-                                                 'Supervised Deep Learning/Part 2 - Convolutional Neural Networks ('
-                                                 'CNN)/Section 8 - Building a CNN/data/training_set_trend',
+training_set = train_datagen.flow_from_directory('/Users/rustambekrukhilloev/Desktop/data/training_set_trend',
                                                  target_size=(64, 64),
                                                  batch_size=32,
                                                  class_mode='binary')
 
-test_set = test_datagen.flow_from_directory('/Users/rustambekrukhilloev/Desktop/Deep_Learning_A_Z/Volume 1 - '
-                                            'Supervised Deep Learning/Part 2 - Convolutional Neural Networks ('
-                                            'CNN)/Section 8 - Building a CNN/data/testing_set_trend',
+test_set = test_datagen.flow_from_directory('/Users/rustambekrukhilloev/Desktop/data/testing_set_trend',
                                             target_size=(64, 64),
                                             batch_size=32,
                                             class_mode='binary')
@@ -87,9 +83,7 @@ training_set.class_indices
 import numpy as np
 from keras.preprocessing import image
 
-test_image = image.load_img('/Users/rustambekrukhilloev/Desktop/Deep_Learning_A_Z/Volume 1 - '
-                            'Supervised Deep Learning/Part 2 - Convolutional Neural Networks ('
-                            'CNN)/Section 8 - Building a CNN/data/single_prediction/u1.jpg',
+test_image = image.load_img('/Users/rustambekrukhilloev/Desktop/data/single_prediction/u1.jpg',
                             target_size=(64, 64))
 test_image = image.img_to_array(test_image)
 test_image = np.expand_dims(test_image, axis=0)
